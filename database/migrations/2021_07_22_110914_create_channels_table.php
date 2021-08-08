@@ -15,6 +15,10 @@ class CreateChannelsTable extends Migration
     {
         Schema::create('channels', function (Blueprint $table) {
             $table->uuid('id');
+            $table->string('name');
+            $table->uuid('user_id');
+            $table->string('description')->nullable();
+            $table->string('image')->default('default.png');
             $table->timestamps();
         });
     }

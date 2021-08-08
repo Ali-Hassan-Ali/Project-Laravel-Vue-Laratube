@@ -39,4 +39,9 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    public function channel()
+    {
+        return $this->hasOne(Channel::class,'user_id');
+    }//end of  hasone channel
+
 }

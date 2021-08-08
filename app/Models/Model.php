@@ -10,6 +10,8 @@ class Model extends BaseModel
 {
     use HasFactory;
 
+    protected $guarded = [];
+
     public $incrementing = false;
 
     protected static function boot ()
@@ -20,5 +22,7 @@ class Model extends BaseModel
             // $model->id = str::uuid();
             $model->{$model->getKeyName()} = (string) Str::uuid();
         });
-    }
-}
+
+    }//end of function boot
+    
+}//end of class model
